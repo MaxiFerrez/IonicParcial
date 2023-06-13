@@ -1,0 +1,7 @@
+{
+  "name": "ParcialDos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
