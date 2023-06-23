@@ -9,15 +9,16 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit{
+
   arrayLocacion: Locacion[] = [];
+  arrayLocacion2: Locacion[] = [];
+  filtro = 0;
   
    constructor(private localService:LocacionService,private router: Router) {}
 
   ngOnInit(){
      this.localService.getLocacion().subscribe(respuesta =>{
       this.arrayLocacion = respuesta.results
-      console.log(respuesta)
-      console.log(this.arrayLocacion)
         }) 
   } 
 
@@ -25,5 +26,16 @@ export class Tab1Page implements OnInit{
     //this.router.navigate(['/gente-de-zona']);
     this.router.navigate(['/gente-de-zona'],{ queryParams: { dato: id } });
   }
+
+   filtrar() {
+    this.arrayLocacion.forEach(elemento => {
+      if(elemento.type=== "Planet"){
+        this.arrayLocacion2.push(elemento)
+      }
+      this.filtro = 1;
+    });
+    
+  
+    } 
 
 }

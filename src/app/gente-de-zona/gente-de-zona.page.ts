@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LocacionService } from '../services/locacion.service';
 import { Locacion,  LocacionInd, personaje  } from '../interfaces/interface_locacion';
 import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-gente-de-zona',
@@ -14,7 +15,8 @@ export class GenteDeZonaPage implements OnInit {
   id =0;
   id1=0;
   arrayId: personaje [] =[];
-  constructor(private localService:LocacionService,private route: ActivatedRoute) { }
+  constructor(private localService:LocacionService,private route: ActivatedRoute,private navCtrl: NavController) { }
+  //constructor(private localService:LocacionService,private route: ActivatedRoute) { }
 
   ngOnInit() {
 
@@ -45,9 +47,12 @@ export class GenteDeZonaPage implements OnInit {
     
   }
 
-  residentes(id: number){
-    
-        //console.log(this.arrayResidents)
+  goToHome() {
+    {
+     this.navCtrl.back();
+    }
+
   }
+
 
 }
