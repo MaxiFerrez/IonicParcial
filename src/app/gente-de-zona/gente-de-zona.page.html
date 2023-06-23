@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Personajes del planeta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Personajes del planeta</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+
+  <ion-item *ngFor="let personaje of arrayId">
+    <h2></h2>
+
+
+
+    <ion-card>
+      <img alt="Silhouette of mountains" src="{{personaje.image}}" />
+      <ion-card-header>
+        <ion-card-title>{{personaje.name}}</ion-card-title>
+        <ion-card-subtitle>{{personaje.species}}</ion-card-subtitle>
+      </ion-card-header>
+  
+    </ion-card>
+  
+  </ion-item>
+
+</ion-content>
+
+
+
